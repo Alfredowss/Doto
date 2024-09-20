@@ -1,6 +1,7 @@
 import performRequest from './apiRequest.js'
 import indexArrayByProperty from '../utils/arrayIndexer.js'
 
+import  ENDPOINTS from '../utils/requestsDiccionary.js'
 
 export default async function getData({registers, limit}){
 
@@ -12,7 +13,7 @@ export default async function getData({registers, limit}){
 	let offset = 0;
 
 	while(i <= CALLS){
-		callPromises.push(performRequest(offset))
+		callPromises.push(performRequest(ENDPOINTS.listOfCategory, offset))
 		offset+=limit;
 		i++;
 	}
@@ -27,7 +28,7 @@ export default async function getData({registers, limit}){
 	})
 
 
-	//indexing
+	//indexing attributes
 	data.forEach(element=>{
 		element.attributes = indexArrayByProperty(element.attributes, "id");
 	})
