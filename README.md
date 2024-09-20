@@ -32,7 +32,7 @@ The application should now be running! 🎉
 
 ## Step 3: Access the Application
 
-- Open your browser and navigate to [http://localhost:8000](http://localhost:8000) (or the port specified in your project).
+- Open your browser and navigate to [http://localhost:3000](http://localhost:3000) (or the port specified in your project).
 - You should now see the app running on your local machine.
 
 Feel free to explore the code, and don't hesitate to make changes!
