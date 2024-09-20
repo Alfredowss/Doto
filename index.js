@@ -41,8 +41,8 @@ app.get('/', (req, res)=>{
 })
 
 
-app.listen(8000, ()=>{
-	console.log("listen on port http://localhost:8000")
+app.listen(3000, ()=>{
+	console.log("listen on port http://localhost:3000")
 })
 
 
