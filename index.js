@@ -16,6 +16,8 @@ async function init(){
 	let data = await getData({registers: 1000, limit: 50})
 
 	response = data.map((element)=>{
+		let currency = CURRENCYS[element.sale_price.currency_id];
+
 		return(new ResponseObject({
 			"SellerID": element?.seller?.id,
 			"SellerName": element?.seller?.nickname,
@@ -23,12 +25,14 @@ async function init(){
 			"ShippingFree": element?.shipping?.free_shipping,
 			"LogisticType": element?.shipping?.logistic_type,
 			//based on the currency
-			"SellerOperation": CURRENCYS[element?.currency_id].name,
+			"SellerOperation": currency.name,
 			//
 			"ItemCondition": element?.attributes["ITEM_CONDITION"]?.value_name,
-			"PricesRange": `${element?.price} - ${element?.original_price || "*"}`
+			"PricesRange": `${element?.price}${currency.id} - ${element?.original_price || element?.price}${currency.id}`
 		}))
 	})
+
+	console.log(response[0])
 }
 
 
