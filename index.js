@@ -25,6 +25,8 @@ async function init(){
 			"ShippingFree": element?.shipping?.free_shipping,
 			"LogisticType": element?.shipping?.logistic_type,
 			//based on the currency
+			//Here, i have a problem with the recaptcha to add the redirect link to 
+			//perform the oAuth Flow, recaptcha service of google have problems
 			"SellerOperation": currency.name,
 			//
 			"ItemCondition": element?.attributes["ITEM_CONDITION"]?.value_name,
